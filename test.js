@@ -1,20 +1,19 @@
-'use strict';
-var test = require('ava');
-var numberIsNan = require('number-is-nan');
-var positiveZero = require('positive-zero');
-var floatEqual = require('float-equal');
-Math.mathLog2 = undefined;
-var mathLog2 = require('./');
+import test from 'ava';
+import numberIsNan from 'number-is-nan';
+import positiveZero from 'positive-zero';
+import floatEqual from 'float-equal';
 
-test(function (t) {
-	t.assert(numberIsNan(mathLog2(NaN)));
-	t.assert(numberIsNan(mathLog2(-1e-50)));
-	t.assert(positiveZero(mathLog2(1)));
-	t.assert(mathLog2(Infinity) === Infinity);
-	t.assert(mathLog2(0) === -Infinity);
-	t.assert(mathLog2(-0) === -Infinity);
-	t.assert(mathLog2(0.5) === -1);
-	t.assert(mathLog2(32) === 5);
-	t.assert(floatEqual(mathLog2(5), 2.321928094887362));
-	t.end();
+Math.fn = undefined;
+const fn = require('./');
+
+test(t => {
+	t.true(numberIsNan(fn(NaN)));
+	t.true(numberIsNan(fn(-1e-50)));
+	t.true(positiveZero(fn(1)));
+	t.is(fn(Infinity), Infinity);
+	t.is(fn(0), -Infinity);
+	t.is(fn(-0), -Infinity);
+	t.is(fn(0.5), -1);
+	t.is(fn(32), 5);
+	t.true(floatEqual(fn(5), 2.321928094887362));
 });
