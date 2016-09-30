@@ -1,8 +1,6 @@
 # math-log2 [![Build Status](https://travis-ci.org/sindresorhus/math-log2.svg?branch=master)](https://travis-ci.org/sindresorhus/math-log2)
 
-> ES2015 [`Math.log2()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/log2) ponyfill
-
-> Ponyfill: A polyfill that doesn't overwrite the native method
+> ES2015 [`Math.log2()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/log2) [ponyfill](https://ponyfill.com)
 
 
 ## Install
